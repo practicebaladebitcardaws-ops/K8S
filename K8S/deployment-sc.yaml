@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ebs-deployment-pod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      volume: storage-class-local-path
+  template:
+    metadata:
+      labels:
+        volume: storage-class-local-path
+    spec:
+      containers:
+      - name: sample
+        image: busybox
+        command: ["sleep", "3600"]
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: my-volume
+          mountPath: /deployment-ebs-sc
+      volumes:
+      - name: my-volume
+        persistentVolumeClaim:
+          claimName: pvc-sc-1
+      nodeSelector:
+        app: flipkart
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-sc-1
+spec:
+#  selector:
+ #   matchLabels:
+  #    volume: storage-class-local-path
+  storageClassName: local-path # Replace with your cluster's StorageClass name
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Mi

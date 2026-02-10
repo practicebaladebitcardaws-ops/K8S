@@ -1,0 +1,81 @@
+Name:             my-deploy-cdc64677d-x7j6j
+Namespace:        default
+Priority:         0
+Service Account:  default
+Node:             ip-172-31-45-121/172.31.45.121
+Start Time:       Wed, 28 Jan 2026 17:03:31 +0000
+Labels:           app=my-deploy
+                  pod-template-hash=cdc64677d
+Annotations:      cni.projectcalico.org/containerID: c7ebb53466d702b488dc04ee038531e80c5450c97b739cf503bd0e43a9175eaa
+                  cni.projectcalico.org/podIP: 192.168.54.171/32
+                  cni.projectcalico.org/podIPs: 192.168.54.171/32
+Status:           Running
+IP:               192.168.54.171
+IPs:
+  IP:           192.168.54.171
+Controlled By:  ReplicaSet/my-deploy-cdc64677d
+Containers:
+  curl:
+    Container ID:  containerd://2e2b085a26fdcb97352852a89a225165c16e267ec68bc499cc811b95bbab684c
+    Image:         alpine/curl
+    Image ID:      docker.io/alpine/curl@sha256:b07e591c7a4dd4aae2145694ab856bbee3037503bf8aab4eb149fa417033d373
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      command=[/bin/sh,
+      -c,
+      sleep 3600]
+    State:          Waiting
+      Reason:       CrashLoopBackOff
+    Last State:     Terminated
+      Reason:       StartError
+      Message:      failed to create containerd task: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: exec: "command=[/bin/sh,": stat command=[/bin/sh,: no such file or directory: unknown
+      Exit Code:    128
+      Started:      Thu, 01 Jan 1970 00:00:00 +0000
+      Finished:     Thu, 29 Jan 2026 15:57:48 +0000
+    Ready:          False
+    Restart Count:  9
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-hwpgx (ro)
+Conditions:
+  Type                        Status
+  PodReadyToStartContainers   True 
+  Initialized                 True 
+  Ready                       False 
+  ContainersReady             False 
+  PodScheduled                True 
+Volumes:
+  kube-api-access-hwpgx:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    Optional:                false
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason          Age                    From               Message
+  ----     ------          ----                   ----               -------
+  Normal   Scheduled       22h                    default-scheduler  Successfully assigned default/my-deploy-cdc64677d-x7j6j to ip-172-31-45-121
+  Normal   Pulled          22h                    kubelet            Successfully pulled image "alpine/curl" in 1.488s (1.488s including waiting). Image size: 6406224 bytes.
+  Normal   Pulled          22h                    kubelet            Successfully pulled image "alpine/curl" in 1.476s (2.085s including waiting). Image size: 6406224 bytes.
+  Normal   Pulled          22h                    kubelet            Successfully pulled image "alpine/curl" in 1.486s (1.486s including waiting). Image size: 6406224 bytes.
+  Normal   Pulling         22h (x4 over 22h)      kubelet            Pulling image "alpine/curl"
+  Normal   Created         22h (x4 over 22h)      kubelet            Created container: curl
+  Warning  Failed          22h (x4 over 22h)      kubelet            Error: failed to create containerd task: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: exec: "command=[/bin/sh,": stat command=[/bin/sh,: no such file or directory: unknown
+  Normal   Pulled          22h                    kubelet            Successfully pulled image "alpine/curl" in 1.492s (1.492s including waiting). Image size: 6406224 bytes.
+  Warning  BackOff         22h (x5 over 22h)      kubelet            Back-off restarting failed container curl in pod my-deploy-cdc64677d-x7j6j_default(4459cb14-8d5c-4085-ad4d-ed7fe410a448)
+  Normal   SandboxChanged  6m43s (x2 over 7m27s)  kubelet            Pod sandbox changed, it will be killed and re-created.
+  Normal   Pulled          6m41s                  kubelet            Successfully pulled image "alpine/curl" in 1.467s (1.467s including waiting). Image size: 6406224 bytes.
+  Normal   Pulled          6m25s                  kubelet            Successfully pulled image "alpine/curl" in 1.468s (1.468s including waiting). Image size: 6406224 bytes.
+  Normal   Pulled          5m54s                  kubelet            Successfully pulled image "alpine/curl" in 1.492s (1.959s including waiting). Image size: 6406224 bytes.
+  Normal   Pulled          5m9s                   kubelet            Successfully pulled image "alpine/curl" in 1.489s (1.489s including waiting). Image size: 6406224 bytes.
+  Warning  Failed          3m34s (x5 over 6m41s)  kubelet            Error: failed to create containerd task: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: exec: "command=[/bin/sh,": stat command=[/bin/sh,: no such file or directory: unknown
+  Normal   Pulled          3m34s                  kubelet            Successfully pulled image "alpine/curl" in 1.485s (1.485s including waiting). Image size: 6406224 bytes.
+  Warning  BackOff         93s (x25 over 6m41s)   kubelet            Back-off restarting failed container curl in pod my-deploy-cdc64677d-x7j6j_default(4459cb14-8d5c-4085-ad4d-ed7fe410a448)
+  Normal   Pulling         50s (x6 over 6m42s)    kubelet            Pulling image "alpine/curl"
+  Normal   Created         48s (x6 over 6m41s)    kubelet            Created container: curl
+  Normal   Pulled          48s                    kubelet            Successfully pulled image "alpine/curl" in 1.46s (1.46s including waiting). Image size: 6406224 bytes.

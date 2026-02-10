@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: myfirstdaemonsets
+  labels:
+    k8s-app: fluentd-logging
+spec:
+  selector:
+    matchLabels:
+      name: fluentd-elasticsearch
+  template:
+    metadata:
+      labels:
+        name: fluentd-elasticsearch
+    spec:
+      containers:
+        - name: mydaemoniamge
+          image: quay.io/fluentd_elasticsearch/fluentd:v5.0.1
+      nodeSelector:
+         app: flipkart
+         location: bangalore
+         country: India

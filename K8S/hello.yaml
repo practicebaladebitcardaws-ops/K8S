@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: my-pod
+  name: my-pod
+spec:
+  containers:
+  - image: busybox
+    name: my-pod
+    args:
+      - "sleep"
+      - "3600"
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: OnFailure
+  nodeSelector:
+    location: "bangalore"
+status: {}

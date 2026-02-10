@@ -1,0 +1,34 @@
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;35r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[35;1H"/tmp/kubectl-edit-1711947301.yaml" 135L, 3988B[1;1H[34m# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#[m
+[36mapiVersion[m[35m:[m v1
+[36mkind[m[35m:[m Pod
+[36mmetadata[m[35m:[m
+  [36mannotations[m[35m:[m
+    [36mcni.projectcalico.org/containerID[m[35m:[m 69ba2c31499be3a366bdd725fe1904f288f96d74a1dd372d566faebe9c8c8715
+    [36mcni.projectcalico.org/podIP[m[35m:[m 192.168.54.172/32
+    [36mcni.projectcalico.org/podIPs[m[35m:[m 192.168.54.172/32
+  [36mcreationTimestamp[m[35m:[m [31m"2026-01-29T16:34:16Z"[m
+  [36mgeneration[m[35m:[m [31m1[m
+  [36mlabels[m[35m:[m
+    [36mrun[m[35m:[m my-pod
+  [36mname[m[35m:[m my-pod
+  [36mnamespace[m[35m:[m default
+  [36mresourceVersion[m[35m:[m [31m"187945"[m
+  [36muid[m[35m:[m bd5eee6d-62db-4c2c-b21f-300c2a53d1f6
+[36mspec[m[35m:[m
+  [36mcontainers[m[35m:[m
+  [38;5;130m- [m[36margs[m[35m:[m
+    [38;5;130m- [msleep
+    [38;5;130m- [m[31m"5000"[m
+    [38;5;130m- [m--dry-run=client
+    [38;5;130m- [m-oyaml
+    [36mimage[m[35m:[m busybox
+    [36mimagePullPolicy[m[35m:[m Always
+    [36mname[m[35m:[m my-pod
+    [36mresources[m[35m:[m [35m{}[m
+    [36mterminationMessagePath[m[35m:[m /dev/termination-log
+    [36mterminationMessagePolicy[m[35m:[m File
+    [36mvolumeMounts[m[35m:[m
+    [38;5;130m- [m[36mmountPath[m[35m:[m /var/run/secrets/kubernetes.io/serviceaccount[35;131H1,1[11CTop[1;1H[?25h[?4m[35;1H[?2004l[>4;m[23;2t[23;1t[35;1H[K[35;1H[?1004l[?2004l[?1l>[?1049l[23;0;0t[>4;m

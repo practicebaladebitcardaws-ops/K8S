@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+  - name: my-container
+    image: nginx
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+        # The hyphen here indicates the start of a list item
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: "created"
+            operator: In
+            values:
+            - "venkaiahK"

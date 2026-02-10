@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicaset-one
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+    matchLabels:
+      env: dev
+      app: flipkart
+  template:
+    metadata:
+      labels:
+        env: dev
+        app: flipkart
+    spec:
+      containers:
+      - name: myreplica-container
+        image: us-docker.pkg.dev/google-samples/containers/gke/gb-frontend:v5
